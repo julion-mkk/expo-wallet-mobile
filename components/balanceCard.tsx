@@ -24,7 +24,7 @@ const BalanceCard = (summary: SummaryProps) => {
 
             <Text className="text-[32px] font-bold mb-5" style={{
                 color: COLORS.text,
-            }}>¥ {summary.balance}</Text>
+            }}>¥ {Intl.NumberFormat().format(summary.balance)}</Text>
 
             <View className="flex-row justify-between">
                 <View className="flex-1 w-full items-center border-r-[1px]" style={{
@@ -35,7 +35,7 @@ const BalanceCard = (summary: SummaryProps) => {
                     }}>Income</Text>
                     <Text className="text-[18px] font-semibold" style={{
                         color: COLORS.income
-                    }}>+ ¥ {parseInt(summary.income.toString())}</Text>
+                    }}>+ ¥ {Intl.NumberFormat().format(parseInt(summary.income.toString()))}</Text>
                 </View>
                 {/*<View className="flex-1 items-center border-r-[1px]" style={{
                     borderColor: COLORS.border
@@ -46,7 +46,7 @@ const BalanceCard = (summary: SummaryProps) => {
                     }}>Expenses</Text>
                     <Text className="text-[18px] font-semibold" style={{
                         color: COLORS.expense
-                    }}>- ¥ {parseInt(summary.expense.toString())} </Text>
+                    }}>- ¥ {Intl.NumberFormat().format(parseInt(summary.expense.toString()))} </Text>
                 </View>
             </View>
         </View>
